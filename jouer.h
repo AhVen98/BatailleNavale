@@ -8,5 +8,5 @@ int lancer();
 int jouer();
 void tourJoueur(int noTour);
 void tourIA(int noTour);
-int checkCoule();
+void checkCoule(int personneJouant);
 #endif //BATTLESHIP_JOUER_H
