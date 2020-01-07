@@ -6,6 +6,7 @@
 #include "global.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 /**
  * fonction permettant d'afficher l'aide du jeu dans la console

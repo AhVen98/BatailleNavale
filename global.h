@@ -23,23 +23,29 @@
 #define SHTB 194 // ┬, Single Horizontal Top Border
 #define SC 197 // ┼, Single Center
 /**
- * déclaration de la longueur des tableaux 2D
+ * déclaration de la taille des tableaux
  */
 #define NBLIGNE 10
 #define NBCOLONNE 10
 /**
  *Définition des grilles de jeu
  */
-#define GRID1 {/*ligne1*/ 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, /*ligne2*/ 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, /*ligne3*/ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, /*ligne4*/ 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, /*ligne5*/ 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, /*ligne6*/ 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, /*ligne7*/ 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, /*ligne8*/ 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, /*ligne9*/ 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, /*ligne10*/ 0, 0, 0, 1, 0, 0, 0, 0, 0, 1}
+#define GRID1 { /*ligne a*/ 0, 0, 0, 0, 2, 2, 2, 0, 0, 0,\
+                /*ligne b*/ 3, 3, 3, 0, 0, 0, 0, 0, 1, 0,\
+                /*ligne c*/ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,\
+                /*ligne d*/ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\
+                /*ligne e*/ 0, 0, 0, 0, 0, 0, 0, 5, 0, 0,\
+                /*ligne f*/ 0, 0, 0, 4, 0, 0, 0, 5, 0, 0,\
+                /*ligneg */ 0, 0, 0, 4, 0, 0, 0, 5, 0, 0,\
+                /*ligne h*/ 0, 0, 0, 4, 0, 0, 0, 5, 0, 0,\
+                /*ligne i*/ 0, 0, 0, 4, 0, 0, 0, 5, 0, 0,\
+                /*ligne j*/ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\
+                          /*0  1  2  3  4  5  6  7  8  9*/}
+//grille vide sur lequel les coups du joueur s'affiche à l'écran
 int emptygrid[NBCOLONNE][NBLIGNE];
+//grille contenant la position des bateaux du joueur et sur laquelle l'ordinateur check les bateaux coules
 int grilleJoueur[NBCOLONNE][NBLIGNE];
+//grille contenant la position des bateaux de l'IA et sur laquelle l'ordinateur check les bateaux coules
 int grilleIA[NBCOLONNE][NBLIGNE];
-
-/**
- * Définition des différentes grilles de la partie
- *                bateau à 2      bateau à 3          bateau à 4              bateau à 5
- */
-#define GRID_1     A2, A3,         C5, C6, C7,         F1, F2, F3, F4,         A8, B8, C8, D8, E8
-
 
 #endif //BATTLESHIP_GLOBAL_H

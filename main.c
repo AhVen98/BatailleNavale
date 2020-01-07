@@ -4,13 +4,14 @@
  *@author Paola COSTA
  *Version: 0.1
  *CreationDate 10.12.19
- *DernieresModifications: 02.01.2020
+ *DernieresModifications: 07.01.2020
 */
 
 #include <stdio.h>
 #include <windows.h>
 #include "global.h"
 #include <stdlib.h>
+#include <time.h>
 
 /**
  * fonction permettant de gérer le lancement des différents processus du jeu

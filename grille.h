@@ -6,5 +6,4 @@
 #define BATTLESHIP_GRILLE_H
 void affichageGrille();
 void grilleChoisie();
-
 #endif //BATTLESHIP_GRILLE_H
