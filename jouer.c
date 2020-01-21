@@ -109,3 +109,5 @@ void tourJoueur(int noTour) {
     fflush(stdin);
     system("cls");
 }
+
+int logs(int action, int personne);
