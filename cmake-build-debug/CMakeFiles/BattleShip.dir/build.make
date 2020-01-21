@@ -82,22 +82,9 @@ CMakeFiles/BattleShip.dir/grille.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BattleShip.dir/grille.c.s"
 	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\grille.c" -o CMakeFiles\BattleShip.dir\grille.c.s
 
-CMakeFiles/BattleShip.dir/aide.c.obj: CMakeFiles/BattleShip.dir/flags.make
-CMakeFiles/BattleShip.dir/aide.c.obj: ../aide.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/BattleShip.dir/aide.c.obj"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\aide.c.obj   -c "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\aide.c"
-
-CMakeFiles/BattleShip.dir/aide.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BattleShip.dir/aide.c.i"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\aide.c" > CMakeFiles\BattleShip.dir\aide.c.i
-
-CMakeFiles/BattleShip.dir/aide.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BattleShip.dir/aide.c.s"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\aide.c" -o CMakeFiles\BattleShip.dir\aide.c.s
-
 CMakeFiles/BattleShip.dir/jouer.c.obj: CMakeFiles/BattleShip.dir/flags.make
 CMakeFiles/BattleShip.dir/jouer.c.obj: ../jouer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/BattleShip.dir/jouer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/BattleShip.dir/jouer.c.obj"
 	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\jouer.c.obj   -c "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\jouer.c"
 
 CMakeFiles/BattleShip.dir/jouer.c.i: cmake_force
@@ -108,20 +95,33 @@ CMakeFiles/BattleShip.dir/jouer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BattleShip.dir/jouer.c.s"
 	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\jouer.c" -o CMakeFiles\BattleShip.dir\jouer.c.s
 
+CMakeFiles/BattleShip.dir/general.c.obj: CMakeFiles/BattleShip.dir/flags.make
+CMakeFiles/BattleShip.dir/general.c.obj: ../general.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/BattleShip.dir/general.c.obj"
+	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\general.c.obj   -c "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\general.c"
+
+CMakeFiles/BattleShip.dir/general.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BattleShip.dir/general.c.i"
+	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\general.c" > CMakeFiles\BattleShip.dir\general.c.i
+
+CMakeFiles/BattleShip.dir/general.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BattleShip.dir/general.c.s"
+	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\general.c" -o CMakeFiles\BattleShip.dir\general.c.s
+
 # Object files for target BattleShip
 BattleShip_OBJECTS = \
 "CMakeFiles/BattleShip.dir/main.c.obj" \
 "CMakeFiles/BattleShip.dir/grille.c.obj" \
-"CMakeFiles/BattleShip.dir/aide.c.obj" \
-"CMakeFiles/BattleShip.dir/jouer.c.obj"
+"CMakeFiles/BattleShip.dir/jouer.c.obj" \
+"CMakeFiles/BattleShip.dir/general.c.obj"
 
 # External object files for target BattleShip
 BattleShip_EXTERNAL_OBJECTS =
 
 BattleShip.exe: CMakeFiles/BattleShip.dir/main.c.obj
 BattleShip.exe: CMakeFiles/BattleShip.dir/grille.c.obj
-BattleShip.exe: CMakeFiles/BattleShip.dir/aide.c.obj
 BattleShip.exe: CMakeFiles/BattleShip.dir/jouer.c.obj
+BattleShip.exe: CMakeFiles/BattleShip.dir/general.c.obj
 BattleShip.exe: CMakeFiles/BattleShip.dir/build.make
 BattleShip.exe: CMakeFiles/BattleShip.dir/linklibs.rsp
 BattleShip.exe: CMakeFiles/BattleShip.dir/objects1.rsp

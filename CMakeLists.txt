@@ -9,4 +9,4 @@ set(CMAKE_C_STANDARD 99)
 
 
 
-add_executable(BattleShip main.c grille.c grille.h global.h aide.h aide.c jouer.c jouer.h)
+add_executable(BattleShip main.c grille.c grille.h global.h jouer.c jouer.h general.c general.h)

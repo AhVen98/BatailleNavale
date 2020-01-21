@@ -74,10 +74,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/aide.c">
+		<Unit filename="P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/general.c">
 			<Option target="BattleShip"/>
 		</Unit>
-		<Unit filename="P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/aide.h">
+		<Unit filename="P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/general.h">
 			<Option target="BattleShip"/>
 		</Unit>
 		<Unit filename="P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/global.h">

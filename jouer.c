@@ -9,38 +9,6 @@
 #include <time.h>
 
 /**
- * fonction permettant à l'utilisateur de sélectionner l'action à effectuer au lancement : afficher l'aide, jouer ou quitter le processus.
- */
-int lancer() {
-    srand(time(NULL));
-    int continuer = 1;
-    printf("BattleShip\n");
-    while (continuer == 1) {
-        int action;
-        printf("Qu'est-ce que tu comptes faire ? jouer (1), afficher l'aide (2) ou quitter (3) ?\n");
-        scanf("%d", &action);
-        switch (action) {
-            case 1 :
-                jouer();
-                break;
-            case 2 :
-                aide();
-                lancer();
-                break;
-            case 3:
-                continuer = 0;
-                break;
-            default:
-                fflush(stdin);
-                lancer();
-                break;
-        }
-        fflush(stdin);
-    }
-    return 0;
-}
-
-/**
  * fonction principale du jeu, qui englobe tout le fonctionnement du jeu
  */
 void jouer() {
@@ -107,7 +75,7 @@ void tourJoueur(int noTour) {
     printf("Tour numero %d : au joueur de jouer\n", noTour);
     affichageGrille();
     fflush(stdin);
-    printf("Quelle case souhaitez-vous attaquer ? (a-j et 0-9)\n");
+    message(3);
     scanf("%c%d", &emplacement[0], &emplacement[1]);
     fflush(stdin);
     printf("Case choisie : %c%d\n", emplacement[0], emplacement[1]);
@@ -115,13 +83,13 @@ void tourJoueur(int noTour) {
     int numcolonne = emplacement[1];
     //check si les valeurs données sont bien dans le tableau
     if (numligne >= 10 || numcolonne >=10){
-        printf("Cette valeur n'est pas presente dans le tableau. ciblez entre a et j, ainsi que 0 et 9.\n");
+        message(4);
         tourJoueur(noTour);
     }
 
     //check si la case contient un bateau ou pas sur la grille de l'IA (valeur == à 1, 2, 3, 4 ou 5 selon le bateau)
     if (grilleIA[numligne][numcolonne]==1 || grilleIA[numligne][numcolonne]==2 ||grilleIA[numligne][numcolonne]==3 ||grilleIA[numligne][numcolonne]==4 ||grilleIA[numligne][numcolonne]==5){
-        printf("Touche ");
+        message(5);
         bateau = grilleIA[numligne][numcolonne];
         emptygrid[numligne][numcolonne]=1;
         grilleIA[numligne][numcolonne]= 8;
@@ -130,7 +98,7 @@ void tourJoueur(int noTour) {
     }
         //check si la case a deja ete ciblee par le joueur. si oui, le dis et fais rejouer
     else if (grilleIA[numligne][numcolonne]==8){
-        printf("Cette case a deja ete attaquee, choissisez-en une autre.");
+        message(4);
         tourJoueur(noTour);
     }
     else {
@@ -139,80 +107,5 @@ void tourJoueur(int noTour) {
     }
     system("pause");
     fflush(stdin);
-}
-
-/**
- * fonction permettant de vérifier si un bateau est coulé si une des cases contenant un bateau est touché
- * @param personneJouant
- * @param numBateau
- */
-void checkCoule(int personneJouant, int numBateau) {
-    int nligne = 0;
-    int ncolonne = 0;
-    int partieBateauRestants = 0;
-    if (personneJouant == 0) {
-        for (nligne = 0; nligne < NBLIGNE; nligne++) {
-            for (ncolonne = 0; ncolonne < NBCOLONNE; ncolonne++) {
-                if (grilleIA[ncolonne][nligne] == numBateau) {
-                    printf("\n");
-                    partieBateauRestants = 1;
-                    nligne = NBLIGNE;
-                    ncolonne = NBCOLONNE;
-                }
-            }
-        }
-        if (partieBateauRestants == 0) {
-            printf("coule \n");
-            checkFini();
-        }
-    } else {
-        for (nligne = 0; nligne < NBLIGNE; nligne++) {
-            for (ncolonne = 0; ncolonne < NBCOLONNE; ncolonne++) {
-                if (grilleJoueur[ncolonne][nligne] == numBateau) {
-                    printf("\n");
-                    partieBateauRestants = 1;
-                    nligne = NBLIGNE;
-                    ncolonne = NBCOLONNE;
-                }
-            }
-        }
-        if (partieBateauRestants == 0) {
-            printf("Coule \n");
-            checkFini();
-        }
-        printf("\n");
-    }
-}
-
-/**
- * fonction permettant ä l'ordinateur de verifier, une fois un bateau coule, si un des deux joueurs a gagne
- */
-void checkFini(){
-    int nligne =0;
-    int ncolonne = 0;
-    int bateauIA=0;
-    int bateauJoueur=0;
-    for (nligne = 0; nligne < NBLIGNE; nligne++) {
-        for (ncolonne = 0; ncolonne < NBCOLONNE; ncolonne++) {
-            if(grilleIA[nligne][ncolonne]!=0 || grilleIA[nligne][ncolonne]!=8){
-                bateauJoueur+=1;
-            }
-            if (grilleJoueur[nligne][ncolonne]!=0 || grilleJoueur[nligne][ncolonne]!=8){
-                bateauIA+=1;
-            }
-        }
-    }
-    if (bateauIA ==0){
-        printf("Felicitations, vous avez gagne la partie.\n");
-        system("pause");
-        lancer();
-    }
-    else if(bateauJoueur==0){
-        printf("Dommage, vous avez perdu. Peut-être une prochaine fois.");
-        system("pause");
-        lancer();
-    }
-    else{
-        printf("\n");
-    }
+    system("cls");
 }

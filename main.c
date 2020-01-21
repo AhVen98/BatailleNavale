@@ -18,6 +18,7 @@
  * @return 0
  */
 int main() {
+    message(0);
     lancer();
     return 0;
 }

@@ -122,32 +122,32 @@ BattleShip/fast:
 	$(MAKE) -f CMakeFiles\BattleShip.dir\build.make CMakeFiles/BattleShip.dir/build
 .PHONY : BattleShip/fast
 
-aide.obj: aide.c.obj
+general.obj: general.c.obj
 
-.PHONY : aide.obj
+.PHONY : general.obj
 
 # target to build an object file
-aide.c.obj:
-	$(MAKE) -f CMakeFiles\BattleShip.dir\build.make CMakeFiles/BattleShip.dir/aide.c.obj
-.PHONY : aide.c.obj
+general.c.obj:
+	$(MAKE) -f CMakeFiles\BattleShip.dir\build.make CMakeFiles/BattleShip.dir/general.c.obj
+.PHONY : general.c.obj
 
-aide.i: aide.c.i
+general.i: general.c.i
 
-.PHONY : aide.i
+.PHONY : general.i
 
 # target to preprocess a source file
-aide.c.i:
-	$(MAKE) -f CMakeFiles\BattleShip.dir\build.make CMakeFiles/BattleShip.dir/aide.c.i
-.PHONY : aide.c.i
+general.c.i:
+	$(MAKE) -f CMakeFiles\BattleShip.dir\build.make CMakeFiles/BattleShip.dir/general.c.i
+.PHONY : general.c.i
 
-aide.s: aide.c.s
+general.s: general.c.s
 
-.PHONY : aide.s
+.PHONY : general.s
 
 # target to generate assembly for a file
-aide.c.s:
-	$(MAKE) -f CMakeFiles\BattleShip.dir\build.make CMakeFiles/BattleShip.dir/aide.c.s
-.PHONY : aide.c.s
+general.c.s:
+	$(MAKE) -f CMakeFiles\BattleShip.dir\build.make CMakeFiles/BattleShip.dir/general.c.s
+.PHONY : general.c.s
 
 grille.obj: grille.c.obj
 
@@ -239,9 +239,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... BattleShip
 	@echo ... edit_cache
-	@echo ... aide.obj
-	@echo ... aide.i
-	@echo ... aide.s
+	@echo ... general.obj
+	@echo ... general.i
+	@echo ... general.s
 	@echo ... grille.obj
 	@echo ... grille.i
 	@echo ... grille.s

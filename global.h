@@ -6,7 +6,7 @@
 
 #include "grille.h"
 #include "jouer.h"
-#include "aide.h"
+#include "general.h"
 
 /**
  * Déclaration des différentes constantes en ASCII étendu (appel par %c) pour pouvoir afficher une grille dans la console

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/aide.c
-aide.h
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/aide.h
+P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/general.c
+general.h
+P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/general.h
 global.h
 P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/global.h
 stdio.h
@@ -18,15 +18,15 @@ stdlib.h
 time.h
 -
 
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/aide.h
+P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/general.h
 
 P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/global.h
 grille.h
 P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/grille.h
 jouer.h
 P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/jouer.h
-aide.h
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/aide.h
+general.h
+P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/general.h
 
 P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/grille.c
 global.h
