@@ -110,4 +110,3 @@ void tourJoueur(int noTour) {
     system("cls");
 }
 
-int logs(int action, int personne);

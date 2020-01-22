@@ -7,5 +7,4 @@
 void jouer();
 void tourJoueur(int noTour);
 void tourIA(int noTour);
-int logs(int action, int personne);
 #endif //BATTLESHIP_JOUER_H

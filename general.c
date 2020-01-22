@@ -170,3 +170,24 @@ void checkFini(){
         printf("\n");
     }
 }
+
+
+
+int logs(int action, int personne){
+switch (action){
+    case 0:
+        if (personne==0){
+
+        }
+        else{
+
+        }
+            break;
+    case 1:
+        break;
+    case 2:
+        break;
+    default:
+        break;
+}
+}
