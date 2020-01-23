@@ -16,7 +16,7 @@ int lancer() {
     int continuer = 1;
     while (continuer == 1) {
         int action;
-        message(1);
+        message(PAGE);
         scanf("%d", &action);
         switch (action) {
             case 1 :
@@ -25,12 +25,17 @@ int lancer() {
                 break;
             case 2 :
                 system("cls");
-                message(2);
+                message(AIDE);
                 lancer();
                 break;
             case 3:
                 system("cls");
                 continuer = 0;
+                break;
+            case 4:
+                system("cls");
+                message(LOGIN);
+                login();
                 break;
             default:
                 fflush(stdin);
@@ -50,46 +55,70 @@ int lancer() {
 void message(int action){
     switch(action){
         //message de bienvenue
-        case 0:
+        case BIENVENUE:
             printf("BattleShip\n");
             printf("May the luck be with you in your game\n");
             break;
-            //message pour le choix de la page à afficher
-        case 1:
-            printf("Qu'est-ce que tu comptes faire ? jouer (1), afficher l'aide (2) ou quitter (3) ?\n");
+
+        //message pour le choix de la page à afficher
+        case PAGE:
+            printf("Qu'est-ce que tu comptes faire ? jouer (1), afficher l'aide (2), quitter (3) ou se logger (4)?\n");
             break;
-            //affichage de l'aide
-        case 2:
+
+        //affichage de l'aide
+        case AIDE:
             printf("Comment jouer : \n");
             printf("- Il y a 5 bateaux caches dans une grille 10 par 10.\n");
             printf("- Il y a 1 bateau de 2 cases, 2 de 3 cases, 1 de 4 cases et 1 de 5 cases. Pour gagner, il faut tous les detruire.\n");
             printf("- On detruit un bateau en ayant cible toutes les cases sur lequel il est situe.\n");
             printf("- Pour cibler une case, lors de ton tour, ecrit la lettre (A-J) et le numero (1-10) associe a la case puis valider.\n");
             printf("La personne qui joue change apres chaque case ciblee, peu importe si un bateau a ete touche ou pas.\n");
+            break;
 
-            //case à attaquer
-        case 3:
+        //case à attaquer
+        case ATTAQUE:
             printf("Quelle case souhaitez-vous attaquer ? (a-j et 0-9)\n");
             break;
-            //case non existante, il faut en cibler une autre
-        case 4:
+
+        //case non existante, il faut en cibler une autre
+        case NA:
             printf("Cette valeur n'est pas ciblable. Choississez-en une autre, situee entre a et j, ainsi que 0 et 9.\n");
-            //bateau touché
-        case 5:
+
+        //bateau touché
+        case TOUCHE:
             printf("Touche ");
             break;
-            //bateau coulé
-        case 6:
+
+        //bateau coulé
+        case COULE:
             printf("coule\n");
             break;
-            //a l'eau
-        case 7:
+
+        //a l'eau
+        case ALEAU:
             printf("A l'eau\n");
             break;
-            //retour à la ligne
-        case 8:
+
+        //retour à la ligne
+        case RETOURLIGNE:
             printf("\n");
             break;
+
+        //victoire
+        case GAGNE:
+            printf("Felicitations, vous avez gagne la partie.\n");
+            break;
+
+        //défaite
+        case PERDU:
+            printf("Dommage, vous avez perdu. Peut-être une prochaine fois.");
+            break;
+
+        //se logger avec un pseudo
+        case LOGIN:
+            printf("Veuillez entrer votre pseudo : ");
+            break;
+
         default:
             break;
     }
@@ -104,11 +133,11 @@ void checkCoule(int personneJouant, int numBateau) {
     int nligne = 0;
     int ncolonne = 0;
     int partieBateauRestants = 0;
-    if (personneJouant == 0) {
+    if (personneJouant == JOUEUR) {
         for (nligne = 0; nligne < NBLIGNE; nligne++) {
             for (ncolonne = 0; ncolonne < NBCOLONNE; ncolonne++) {
                 if (grilleIA[ncolonne][nligne] == numBateau) {
-                    printf("\n");
+                    message(RETOURLIGNE);
                     partieBateauRestants = 1;
                     nligne = NBLIGNE;
                     ncolonne = NBCOLONNE;
@@ -116,14 +145,14 @@ void checkCoule(int personneJouant, int numBateau) {
             }
         }
         if (partieBateauRestants == 0) {
-            message(6);
+            message(COULE);
             checkFini();
         }
     } else {
         for (nligne = 0; nligne < NBLIGNE; nligne++) {
             for (ncolonne = 0; ncolonne < NBCOLONNE; ncolonne++) {
                 if (grilleJoueur[ncolonne][nligne] == numBateau) {
-                    printf("\n");
+                    message(RETOURLIGNE);
                     partieBateauRestants = 1;
                     nligne = NBLIGNE;
                     ncolonne = NBCOLONNE;
@@ -131,10 +160,10 @@ void checkCoule(int personneJouant, int numBateau) {
             }
         }
         if (partieBateauRestants == 0) {
-            message(6);
+            message(COULE);
             checkFini();
         }
-        printf("\n");
+        message(RETOURLIGNE);
     }
 }
 
@@ -157,26 +186,29 @@ void checkFini(){
         }
     }
     if (bateauIA ==0){
-        printf("Felicitations, vous avez gagne la partie.\n");
+        message(GAGNE);
         system("pause");
         lancer();
     }
     else if(bateauJoueur==0){
-        printf("Dommage, vous avez perdu. Peut-être une prochaine fois.");
+        message(PERDU);
         system("pause");
         lancer();
     }
     else{
-        printf("\n");
+        message(RETOURLIGNE);
     }
 }
 
-
-
-int logs(int action, int personne){
+/**
+ * fonction permettant d'enregistrer dans les logs ce qu'il se passe
+ * @param action
+ * @param personne
+ */
+void logs(int action, int personne){
 switch (action){
     case 0:
-        if (personne==0){
+        if (personne==JOUEUR){
 
         }
         else{
@@ -189,5 +221,16 @@ switch (action){
         break;
     default:
         break;
+    }
 }
+
+void login(){
+    int i =0;
+    fflush(stdin);
+    scanf("%s", &pseudo);
+    for(i=0;i<15;i++){
+        printf("%c", pseudo[i]);
+    }
+    system("pause");
+    lancer();
 }

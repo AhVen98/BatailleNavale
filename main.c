@@ -18,7 +18,7 @@
  * @return 0
  */
 int main() {
-    message(0);
+    message(BIENVENUE);
     lancer();
     return 0;
 }

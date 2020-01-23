@@ -48,4 +48,22 @@ int grilleJoueur[NBCOLONNE][NBLIGNE];
 //grille contenant la position des bateaux de l'IA et sur laquelle l'ordinateur check les bateaux coules
 int grilleIA[NBCOLONNE][NBLIGNE];
 
+//tableau pour enregistrer le pseudo
+char pseudo[15];
+
+//constante pour les différents switch
+#define JOUEUR 0
+#define IA 1
+#define BIENVENUE 0
+#define PAGE 1
+#define AIDE 2
+#define ATTAQUE 3
+#define NA 4
+#define TOUCHE 5
+#define COULE 6
+#define ALEAU 7
+#define RETOURLIGNE 8
+#define GAGNE 9
+#define PERDU 10
+#define LOGIN 11
 #endif //BATTLESHIP_GLOBAL_H

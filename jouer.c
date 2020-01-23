@@ -35,8 +35,6 @@ void jouer() {
  * @param noTour
  */
 void tourIA(int noTour) {
-    //variable qui permettra a la fonction checkCoule() de savoir qu'il s'agit de l'IA
-    int IA = 1;
     //variable qui va recuperer la valeur de la case attaquee et la transmettre a checkCoule() afin de determiner si le bateau correspondant est coule
     int bateau;
     printf("Tour numero %d : a l'IA de jouer\n", noTour);
@@ -70,12 +68,11 @@ void tourIA(int noTour) {
  */
 void tourJoueur(int noTour) {
     char emplacement[2] = {' ', ' '};
-    int joueur = 0;
     int bateau=0;
     printf("Tour numero %d : au joueur de jouer\n", noTour);
     affichageGrille();
     fflush(stdin);
-    message(3);
+    message(ATTAQUE);
     scanf("%c%d", &emplacement[0], &emplacement[1]);
     fflush(stdin);
     printf("Case choisie : %c%d\n", emplacement[0], emplacement[1]);
@@ -83,27 +80,27 @@ void tourJoueur(int noTour) {
     int numcolonne = emplacement[1];
     //check si les valeurs données sont bien dans le tableau
     if (numligne >= 10 || numcolonne >=10){
-        message(4);
+        message(NA);
         tourJoueur(noTour);
     }
 
     //check si la case contient un bateau ou pas sur la grille de l'IA (valeur == à 1, 2, 3, 4 ou 5 selon le bateau)
     if (grilleIA[numligne][numcolonne]==1 || grilleIA[numligne][numcolonne]==2 ||grilleIA[numligne][numcolonne]==3 ||grilleIA[numligne][numcolonne]==4 ||grilleIA[numligne][numcolonne]==5){
-        message(5);
+        message(TOUCHE);
         bateau = grilleIA[numligne][numcolonne];
         emptygrid[numligne][numcolonne]=1;
         grilleIA[numligne][numcolonne]= 8;
         //si le bateau est touché, check chez l'IA si le bateau est coulé
-        checkCoule(joueur, bateau);
+        checkCoule(JOUEUR, bateau);
     }
         //check si la case a deja ete ciblee par le joueur. si oui, le dis et fais rejouer
     else if (grilleIA[numligne][numcolonne]==8){
-        message(4);
+        message(NA);
         tourJoueur(noTour);
     }
     else {
         emptygrid[numligne][numcolonne]=2;
-        printf("A l'eau\n");
+        message(ALEAU);
     }
     system("pause");
     fflush(stdin);

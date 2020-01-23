@@ -8,5 +8,6 @@ int lancer();
 void message(int action);
 void checkCoule(int personneJouant, int numBateau);
 void checkFini();
-int logs(int action, int personne);
+void logs(int action, int personne);
+void login();
 #endif //BATTLESHIP_GENERAL_H
