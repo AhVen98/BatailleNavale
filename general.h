@@ -6,6 +6,8 @@
 #define BATTLESHIP_GENERAL_H
 int lancer();
 void message(int action);
+int checkValidite(int tour, int ligne, int colonne);
+void checkBateau(int personne, int ligne, int colonne, int tour);
 void checkCoule(int personneJouant, int numBateau);
 void checkFini();
 void logs(int action, int personne);

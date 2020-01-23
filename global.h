@@ -66,4 +66,9 @@ char pseudo[15];
 #define GAGNE 9
 #define PERDU 10
 #define LOGIN 11
+
+//constantes vrai faux pour savoir de quoi on parle dans les fonctions
+#define VRAI 1
+#define FAUX 0
+
 #endif //BATTLESHIP_GLOBAL_H

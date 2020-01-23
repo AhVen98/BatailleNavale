@@ -35,30 +35,13 @@ void jouer() {
  * @param noTour
  */
 void tourIA(int noTour) {
-    //variable qui va recuperer la valeur de la case attaquee et la transmettre a checkCoule() afin de determiner si le bateau correspondant est coule
-    int bateau;
-    printf("Tour numero %d : a l'IA de jouer\n", noTour);
     int numLigne = rand()%10;
     int numColonne = rand()%10;
-    //check que les valeurs soient bien comprises entre 0 et 9, sinon, relance le tour pour l'IA
-    if (numLigne >= 10 || numColonne >=10){
-        tourIA(noTour);
-    }
-    //check si la case contient un bateau ou pas sur la grille du joueur (valeur == à 1, 2, 3, 4 ou 5, variable selon le bateau)
-    if (grilleJoueur[numLigne][numColonne]==1 || grilleJoueur[numLigne][numColonne]==2 ||grilleJoueur[numLigne][numColonne]==3 ||grilleJoueur[numLigne][numColonne]==4 ||grilleJoueur[numLigne][numColonne]==5){
-        printf("Touche en %c%d ", numLigne+97, numColonne);
-        //assigne la valeur a la variable bateau, pour le checkCoule()
-        bateau = grilleIA[numLigne][numColonne];
-        grilleJoueur[numLigne][numColonne]= 8;
-        //si le bateau est touché, check chez le joueur si le bateau est coulé
-        checkCoule(IA , bateau);
-    }
-    else if (grilleJoueur[numLigne][numColonne]==8){
-        tourIA(noTour);
-    }
-    else {
-        printf("A l'eau en %c%d\n", numLigne+97, numColonne);
-    }
+    printf("Tour numero %d : a l'IA de jouer\n", noTour);
+    printf("Case ciblee : %c%d\n", numLigne+97, numColonne);
+    message(RETOURLIGNE);
+	//check si la case ciblée contient un bateau ou non
+    checkBateau(IA, numLigne, numColonne, noTour);
     system("pause");
 };
 
@@ -78,32 +61,16 @@ void tourJoueur(int noTour) {
     printf("Case choisie : %c%d\n", emplacement[0], emplacement[1]);
     int numligne = emplacement[0]-97;
     int numcolonne = emplacement[1];
-    //check si les valeurs données sont bien dans le tableau
-    if (numligne >= 10 || numcolonne >=10){
-        message(NA);
-        tourJoueur(noTour);
-    }
+    int valide = checkValidite(noTour, numligne, numcolonne);
 
+    if (valide == VRAI){
+        checkBateau(JOUEUR, numligne, numcolonne, noTour);
+    }
     //check si la case contient un bateau ou pas sur la grille de l'IA (valeur == à 1, 2, 3, 4 ou 5 selon le bateau)
-    if (grilleIA[numligne][numcolonne]==1 || grilleIA[numligne][numcolonne]==2 ||grilleIA[numligne][numcolonne]==3 ||grilleIA[numligne][numcolonne]==4 ||grilleIA[numligne][numcolonne]==5){
-        message(TOUCHE);
-        bateau = grilleIA[numligne][numcolonne];
-        emptygrid[numligne][numcolonne]=1;
-        grilleIA[numligne][numcolonne]= 8;
-        //si le bateau est touché, check chez l'IA si le bateau est coulé
-        checkCoule(JOUEUR, bateau);
-    }
-        //check si la case a deja ete ciblee par le joueur. si oui, le dis et fais rejouer
-    else if (grilleIA[numligne][numcolonne]==8){
-        message(NA);
-        tourJoueur(noTour);
-    }
-    else {
-        emptygrid[numligne][numcolonne]=2;
-        message(ALEAU);
-    }
+
     system("pause");
     fflush(stdin);
     system("cls");
 }
+
 

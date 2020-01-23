@@ -125,6 +125,76 @@ void message(int action){
 }
 
 /**
+ * fonction permettant de checker la validité de la valeur entrée par le joueur pour l'emplacement
+ * @param tour
+ * @param ligne
+ * @param colonne
+ * @return si la case sélectionnée est effectivement présente dans la grille ou pas
+ */
+int checkValidite(int tour, int ligne, int colonne){
+    int validite ;
+    if ((ligne > 9) || (colonne > 9) || (ligne<0) || (colonne<0)){
+        message(NA);
+        validite = FAUX;
+        tourJoueur(tour);
+    }
+    else{
+        validite=VRAI;
+    }
+    return validite;
+}
+
+
+void checkBateau(int personne, int ligne, int colonne, int tour){
+    int presenceBateau=-1;
+    if (personne == IA){
+        //check si la case a déjà été ciblé par l'IA auparavant, relance le tour si oui
+        if (grilleJoueur[ligne][colonne]==8){
+            tourIA(tour);
+        }
+        //check si la case contient un bateau ou pas sur la grille du joueur (valeur == à 1, 2, 3, 4 ou 5, variable selon le bateau)
+        else if (    (grilleJoueur[ligne][colonne]==1)
+            ||  (grilleJoueur[ligne][colonne]==2)
+            ||  (grilleJoueur[ligne][colonne]==3)
+            ||  (grilleJoueur[ligne][colonne]==4)
+            ||  (grilleJoueur[ligne][colonne]==5)){
+            printf("Touche en %c%d ", ligne+97, colonne);
+            //assigne la valeur a la variable touche, pour le checkCoule()
+            presenceBateau = grilleIA[ligne][colonne];
+            grilleJoueur[ligne][colonne]= 8;
+            //si le bateau est touché, check chez le joueur si le bateau est coulé
+            checkCoule(IA , presenceBateau);
+        }
+        else {
+            printf("A l'eau en %c%d\n", ligne+97, colonne);
+        }
+    }
+    else{
+        if (    (grilleIA[ligne ][colonne]==1)
+            ||  (grilleIA[ligne][colonne]==2)
+            ||  (grilleIA[ligne][colonne]==3)
+            ||  (grilleIA[ligne][colonne]==4)
+            ||  (grilleIA[ligne][colonne]==5)){
+            message(TOUCHE);
+            presenceBateau = grilleIA[ligne][colonne];
+            emptygrid[ligne][colonne]=1;
+            grilleIA[ligne][colonne]= 8;
+            //si le bateau est touché, check chez l'IA si le bateau est coulé
+            checkCoule(JOUEUR, presenceBateau);
+        }
+            //check si la case a deja ete ciblee par le joueur. si oui, le dis et fais rejouer
+        else if (grilleIA[ligne][colonne]==8){
+            message(NA);
+            tourJoueur(tour);
+        }
+        else {
+            emptygrid[ligne][colonne]=2;
+            message(ALEAU);
+        }
+    }
+}
+
+/**
  * fonction permettant de vérifier si un bateau est coulé si une des cases contenant un bateau est touché
  * @param personneJouant
  * @param numBateau
@@ -224,6 +294,9 @@ switch (action){
     }
 }
 
+/**
+ * fonction permettant au joueur d'écrire son pseudo
+ */
 void login(){
     int i =0;
     fflush(stdin);
