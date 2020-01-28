@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2"
+CMAKE_SOURCE_DIR = C:\Users\paola\Desktop\BatailleNavale
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug"
+CMAKE_BINARY_DIR = C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/BattleShip.dir/depend.make
@@ -58,55 +58,55 @@ include CMakeFiles/BattleShip.dir/flags.make
 
 CMakeFiles/BattleShip.dir/main.c.obj: CMakeFiles/BattleShip.dir/flags.make
 CMakeFiles/BattleShip.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/BattleShip.dir/main.c.obj"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\main.c.obj   -c "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\main.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/BattleShip.dir/main.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\main.c.obj   -c C:\Users\paola\Desktop\BatailleNavale\main.c
 
 CMakeFiles/BattleShip.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BattleShip.dir/main.c.i"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\main.c" > CMakeFiles\BattleShip.dir\main.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\paola\Desktop\BatailleNavale\main.c > CMakeFiles\BattleShip.dir\main.c.i
 
 CMakeFiles/BattleShip.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BattleShip.dir/main.c.s"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\main.c" -o CMakeFiles\BattleShip.dir\main.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\paola\Desktop\BatailleNavale\main.c -o CMakeFiles\BattleShip.dir\main.c.s
 
 CMakeFiles/BattleShip.dir/grille.c.obj: CMakeFiles/BattleShip.dir/flags.make
 CMakeFiles/BattleShip.dir/grille.c.obj: ../grille.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/BattleShip.dir/grille.c.obj"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\grille.c.obj   -c "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\grille.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/BattleShip.dir/grille.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\grille.c.obj   -c C:\Users\paola\Desktop\BatailleNavale\grille.c
 
 CMakeFiles/BattleShip.dir/grille.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BattleShip.dir/grille.c.i"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\grille.c" > CMakeFiles\BattleShip.dir\grille.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\paola\Desktop\BatailleNavale\grille.c > CMakeFiles\BattleShip.dir\grille.c.i
 
 CMakeFiles/BattleShip.dir/grille.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BattleShip.dir/grille.c.s"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\grille.c" -o CMakeFiles\BattleShip.dir\grille.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\paola\Desktop\BatailleNavale\grille.c -o CMakeFiles\BattleShip.dir\grille.c.s
 
 CMakeFiles/BattleShip.dir/jouer.c.obj: CMakeFiles/BattleShip.dir/flags.make
 CMakeFiles/BattleShip.dir/jouer.c.obj: ../jouer.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/BattleShip.dir/jouer.c.obj"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\jouer.c.obj   -c "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\jouer.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/BattleShip.dir/jouer.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\jouer.c.obj   -c C:\Users\paola\Desktop\BatailleNavale\jouer.c
 
 CMakeFiles/BattleShip.dir/jouer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BattleShip.dir/jouer.c.i"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\jouer.c" > CMakeFiles\BattleShip.dir\jouer.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\paola\Desktop\BatailleNavale\jouer.c > CMakeFiles\BattleShip.dir\jouer.c.i
 
 CMakeFiles/BattleShip.dir/jouer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BattleShip.dir/jouer.c.s"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\jouer.c" -o CMakeFiles\BattleShip.dir\jouer.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\paola\Desktop\BatailleNavale\jouer.c -o CMakeFiles\BattleShip.dir\jouer.c.s
 
 CMakeFiles/BattleShip.dir/general.c.obj: CMakeFiles/BattleShip.dir/flags.make
 CMakeFiles/BattleShip.dir/general.c.obj: ../general.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/BattleShip.dir/general.c.obj"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\general.c.obj   -c "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\general.c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/BattleShip.dir/general.c.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\BattleShip.dir\general.c.obj   -c C:\Users\paola\Desktop\BatailleNavale\general.c
 
 CMakeFiles/BattleShip.dir/general.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/BattleShip.dir/general.c.i"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\general.c" > CMakeFiles\BattleShip.dir\general.c.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\paola\Desktop\BatailleNavale\general.c > CMakeFiles\BattleShip.dir\general.c.i
 
 CMakeFiles/BattleShip.dir/general.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/BattleShip.dir/general.c.s"
-	C:\MingGW\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\general.c" -o CMakeFiles\BattleShip.dir\general.c.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\paola\Desktop\BatailleNavale\general.c -o CMakeFiles\BattleShip.dir\general.c.s
 
 # Object files for target BattleShip
 BattleShip_OBJECTS = \
@@ -126,7 +126,7 @@ BattleShip.exe: CMakeFiles/BattleShip.dir/build.make
 BattleShip.exe: CMakeFiles/BattleShip.dir/linklibs.rsp
 BattleShip.exe: CMakeFiles/BattleShip.dir/objects1.rsp
 BattleShip.exe: CMakeFiles/BattleShip.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable BattleShip.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable BattleShip.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\BattleShip.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -139,6 +139,6 @@ CMakeFiles/BattleShip.dir/clean:
 .PHONY : CMakeFiles/BattleShip.dir/clean
 
 CMakeFiles/BattleShip.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2" "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2" "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug" "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug" "P:\T2 -- MA-20 -- Projet C\Projet Bataille Navale\BattleShip_2\cmake-build-debug\CMakeFiles\BattleShip.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\paola\Desktop\BatailleNavale C:\Users\paola\Desktop\BatailleNavale C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug C:\Users\paola\Desktop\BatailleNavale\cmake-build-debug\CMakeFiles\BattleShip.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/BattleShip.dir/depend
 

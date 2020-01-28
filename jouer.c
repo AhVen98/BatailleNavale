@@ -43,7 +43,7 @@ void tourIA(int noTour) {
 	//check si la case ciblée contient un bateau ou non
     checkBateau(IA, numLigne, numColonne, noTour);
     system("pause");
-};
+}
 
 /**
  * fonction permettant de définir ce qui se passe lors du tour du joueur
@@ -51,7 +51,6 @@ void tourIA(int noTour) {
  */
 void tourJoueur(int noTour) {
     char emplacement[2] = {' ', ' '};
-    int bateau=0;
     printf("Tour numero %d : au joueur de jouer\n", noTour);
     affichageGrille();
     fflush(stdin);
@@ -62,15 +61,11 @@ void tourJoueur(int noTour) {
     int numligne = emplacement[0]-97;
     int numcolonne = emplacement[1];
     int valide = checkValidite(noTour, numligne, numcolonne);
-
     if (valide == VRAI){
         checkBateau(JOUEUR, numligne, numcolonne, noTour);
     }
     //check si la case contient un bateau ou pas sur la grille de l'IA (valeur == à 1, 2, 3, 4 ou 5 selon le bateau)
-
     system("pause");
     fflush(stdin);
     system("cls");
 }
-
-

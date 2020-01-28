@@ -64,8 +64,9 @@ void affichageGrille() {
  *fonction permettant à l'ordinateur de choisir la grille pour le joueur et l'IA (1 seule possibilité en version 0.1) et de creer le tableau associe
  */
 void grilleChoisie(){
+    int i = rand()%3;
     //Sélection de la grille (fixe en v0.1)
-    int grille[NBCOLONNE][NBLIGNE] = GRID1;
+    int grille[NBCOLONNE][NBLIGNE]=GRID1;
     //variables pour les boucles for
     int ligne=0;
     int colonne=0;

@@ -30,7 +30,7 @@
 /**
  *Définition des grilles de jeu
  */
-#define GRID1 { /*ligne a*/ 0, 0, 0, 0, 2, 2, 2, 0, 0, 0,\
+#define GRID1 {  /*ligne a*/ 0, 0, 0, 0, 2, 2, 2, 0, 0, 0,\
                 /*ligne b*/ 3, 3, 3, 0, 0, 0, 0, 0, 1, 0,\
                 /*ligne c*/ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,\
                 /*ligne d*/ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,\
@@ -66,6 +66,7 @@ char pseudo[15];
 #define GAGNE 9
 #define PERDU 10
 #define LOGIN 11
+#define HISTORIQUE 12
 
 //constantes vrai faux pour savoir de quoi on parle dans les fonctions
 #define VRAI 1

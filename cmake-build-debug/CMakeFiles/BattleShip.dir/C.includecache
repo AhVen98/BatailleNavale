@@ -6,23 +6,19 @@
 
 #IncludeRegexTransform: 
 
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/general.h
+C:/Users/paola/Desktop/BatailleNavale/general.h
 
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/global.h
+C:/Users/paola/Desktop/BatailleNavale/global.h
 grille.h
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/grille.h
+C:/Users/paola/Desktop/BatailleNavale/grille.h
 jouer.h
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/jouer.h
+C:/Users/paola/Desktop/BatailleNavale/jouer.h
 general.h
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/general.h
+C:/Users/paola/Desktop/BatailleNavale/general.h
 
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/grille.h
-
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/jouer.c
-jouer.h
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/jouer.h
+C:/Users/paola/Desktop/BatailleNavale/grille.c
 global.h
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/global.h
+C:/Users/paola/Desktop/BatailleNavale/global.h
 stdio.h
 -
 stdlib.h
@@ -30,5 +26,7 @@ stdlib.h
 time.h
 -
 
-P:/T2 -- MA-20 -- Projet C/Projet Bataille Navale/BattleShip_2/jouer.h
+C:/Users/paola/Desktop/BatailleNavale/grille.h
+
+C:/Users/paola/Desktop/BatailleNavale/jouer.h
 

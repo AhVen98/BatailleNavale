@@ -12,4 +12,5 @@ void checkCoule(int personneJouant, int numBateau);
 void checkFini();
 void logs(int action, int personne);
 void login();
+void score();
 #endif //BATTLESHIP_GENERAL_H

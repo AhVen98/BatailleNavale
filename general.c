@@ -37,6 +37,10 @@ int lancer() {
                 message(LOGIN);
                 login();
                 break;
+            case 5:
+                score();
+                lancer();
+                break;
             default:
                 fflush(stdin);
                 system("cls");
@@ -62,7 +66,7 @@ void message(int action){
 
         //message pour le choix de la page à afficher
         case PAGE:
-            printf("Qu'est-ce que tu comptes faire ? jouer (1), afficher l'aide (2), quitter (3) ou se logger (4)?\n");
+            printf("Qu'est-ce que tu comptes faire ? jouer (1), afficher l'aide (2), quitter (3), se logger (4) ou afficher l'historique des scores (5)?\n");
             break;
 
         //affichage de l'aide
@@ -119,9 +123,32 @@ void message(int action){
             printf("Veuillez entrer votre pseudo : ");
             break;
 
+        //afficher l'historique des parties
+        case HISTORIQUE:
+            printf("Voici l'historique des parties et le score correspondant : \n");
+            break;
+
         default:
             break;
     }
+}
+
+/**
+ * fonction permettant d'afficher l'historique des scores des autres parties
+ */
+void score(){
+    message(HISTORIQUE);
+    char i;
+    FILE * scoresFichier;
+    scoresFichier = fopen("scores_history.txt", "r");
+    i = fgetc(scoresFichier);
+    while(i!=EOF)
+    {
+        printf ("%c", i);
+        i = fgetc(scoresFichier);
+    }
+    fclose(scoresFichier);
+    system("pause");
 }
 
 /**
@@ -144,9 +171,17 @@ int checkValidite(int tour, int ligne, int colonne){
     return validite;
 }
 
-
+/**
+ * fonction permettant de check s'il y a un bateau sur la case ciblée
+ * @param personne
+ * @param ligne
+ * @param colonne
+ * @param tour
+ */
 void checkBateau(int personne, int ligne, int colonne, int tour){
     int presenceBateau=-1;
+    FILE * logsFichier;
+    logsFichier = fopen("logs.txt", "a");
     if (personne == IA){
         //check si la case a déjà été ciblé par l'IA auparavant, relance le tour si oui
         if (grilleJoueur[ligne][colonne]==8){
@@ -159,6 +194,7 @@ void checkBateau(int personne, int ligne, int colonne, int tour){
             ||  (grilleJoueur[ligne][colonne]==4)
             ||  (grilleJoueur[ligne][colonne]==5)){
             printf("Touche en %c%d ", ligne+97, colonne);
+            fprintf(logsFichier, "L'IA touche en %c%d au tour %d\n", ligne+97, colonne, tour);
             //assigne la valeur a la variable touche, pour le checkCoule()
             presenceBateau = grilleIA[ligne][colonne];
             grilleJoueur[ligne][colonne]= 8;
@@ -176,13 +212,14 @@ void checkBateau(int personne, int ligne, int colonne, int tour){
             ||  (grilleIA[ligne][colonne]==4)
             ||  (grilleIA[ligne][colonne]==5)){
             message(TOUCHE);
+            fprintf(logsFichier, "Le joueur touche en %c%d au tour %d.\n", ligne+97, colonne, tour);
             presenceBateau = grilleIA[ligne][colonne];
             emptygrid[ligne][colonne]=1;
             grilleIA[ligne][colonne]= 8;
             //si le bateau est touché, check chez l'IA si le bateau est coulé
             checkCoule(JOUEUR, presenceBateau);
         }
-            //check si la case a deja ete ciblee par le joueur. si oui, le dis et fais rejouer
+        //check si la case a deja ete ciblee par le joueur. si oui, le dis et fais rejouer
         else if (grilleIA[ligne][colonne]==8){
             message(NA);
             tourJoueur(tour);
@@ -203,6 +240,8 @@ void checkCoule(int personneJouant, int numBateau) {
     int nligne = 0;
     int ncolonne = 0;
     int partieBateauRestants = 0;
+    FILE * logsFichier;
+    logsFichier = fopen("logs.txt", "a");
     if (personneJouant == JOUEUR) {
         for (nligne = 0; nligne < NBLIGNE; nligne++) {
             for (ncolonne = 0; ncolonne < NBCOLONNE; ncolonne++) {
@@ -216,6 +255,7 @@ void checkCoule(int personneJouant, int numBateau) {
         }
         if (partieBateauRestants == 0) {
             message(COULE);
+            fprintf(logsFichier, "Le joueur coule le bateau.\n");
             checkFini();
         }
     } else {
@@ -231,6 +271,7 @@ void checkCoule(int personneJouant, int numBateau) {
         }
         if (partieBateauRestants == 0) {
             message(COULE);
+            fprintf(logsFichier, "L'IA coule le bateau.\n");
             checkFini();
         }
         message(RETOURLIGNE);
@@ -245,6 +286,10 @@ void checkFini(){
     int ncolonne = 0;
     int bateauIA=0;
     int bateauJoueur=0;
+    FILE * logsFichier;
+    FILE * scoresFichier;
+    logsFichier = fopen("logs.txt", "a");
+    scoresFichier = fopen("scores_history.txt", "a");
     for (nligne = 0; nligne < NBLIGNE; nligne++) {
         for (ncolonne = 0; ncolonne < NBCOLONNE; ncolonne++) {
             if(grilleIA[nligne][ncolonne]!=0 || grilleIA[nligne][ncolonne]!=8){
@@ -257,40 +302,20 @@ void checkFini(){
     }
     if (bateauIA ==0){
         message(GAGNE);
+        fprintf(logsFichier, "Le joueur a gagne la partie !!! Felicitations.\n");
+        fprintf(scoresFichier, "%s : 500points.\n");
         system("pause");
         lancer();
     }
     else if(bateauJoueur==0){
         message(PERDU);
+        fprintf(logsFichier, "L'IA a gagne la partie !!! Dommage, ca sera pour une prochaine fois.\n");
+        fprintf(scoresFichier, "%s : 0points.\n");
         system("pause");
         lancer();
     }
     else{
         message(RETOURLIGNE);
-    }
-}
-
-/**
- * fonction permettant d'enregistrer dans les logs ce qu'il se passe
- * @param action
- * @param personne
- */
-void logs(int action, int personne){
-switch (action){
-    case 0:
-        if (personne==JOUEUR){
-
-        }
-        else{
-
-        }
-            break;
-    case 1:
-        break;
-    case 2:
-        break;
-    default:
-        break;
     }
 }
 
